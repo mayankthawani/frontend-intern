@@ -14,10 +14,10 @@ export default function StatsSection({ stats, isLoading }) {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-pulse">
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-            <div className="h-4 bg-gray-200 rounded w-24 mb-4"></div>
-            <div className="h-10 bg-gray-200 rounded w-16 mb-2"></div>
-            <div className="h-3 bg-gray-200 rounded w-full"></div>
+          <div key={i} className="bg-card rounded-xl p-6 border border-border">
+            <div className="h-4 bg-muted rounded w-24 mb-4"></div>
+            <div className="h-10 bg-muted rounded w-16 mb-2"></div>
+            <div className="h-3 bg-muted rounded w-full"></div>
           </div>
         ))}
       </div>
@@ -40,19 +40,19 @@ export default function StatsSection({ stats, isLoading }) {
         return (
           <div
             key={stat.key}
-            className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+            className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow duration-300"
             role="region"
             aria-label={`${stat.label} statistics`}
           >
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-medium text-gray-600">{stat.label}</h3>
+              <h3 className="text-sm font-medium text-muted-foreground">{stat.label}</h3>
               <div className={`p-2 rounded-lg ${bgColor}`}>
                 <Icon className={`w-5 h-5 ${color}`} aria-hidden="true" />
               </div>
             </div>
             
             <div className="mb-2">
-              <span className="text-4xl font-bold text-gray-900">{stat.count}</span>
+              <span className="text-4xl font-bold text-foreground">{stat.count}</span>
             </div>
             
             <div className="flex items-center gap-1 text-sm">

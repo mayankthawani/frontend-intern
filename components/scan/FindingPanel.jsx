@@ -18,9 +18,9 @@ export default function FindingPanel({ findings = [] }) {
   }
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 flex flex-col h-full">
-      <div className="border-b border-gray-200 p-4">
-        <h3 className="font-semibold text-gray-900">Finding Log</h3>
+    <div className="bg-card rounded-xl border border-border flex flex-col h-full">
+      <div className="border-b border-border p-4">
+        <h3 className="font-semibold text-foreground">Finding Log</h3>
       </div>
 
       <div className="flex-1 overflow-auto p-4">
@@ -39,15 +39,15 @@ export default function FindingPanel({ findings = [] }) {
                     >
                       {finding.severity}
                     </span>
-                    <span className="text-xs text-gray-500">{finding.timestamp}</span>
+                    <span className="text-xs text-muted-foreground">{finding.timestamp}</span>
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-1">
+                  <h4 className="font-semibold text-foreground mb-1">
                     {finding.title}
                   </h4>
                   <p className="text-sm text-teal-600 font-mono mb-2">
                     {finding.endpoint}
                   </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {finding.description}
                   </p>
                 </div>
@@ -55,8 +55,8 @@ export default function FindingPanel({ findings = [] }) {
             })
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-500">No findings detected yet</p>
-              <p className="text-sm text-gray-400 mt-1">
+              <p className="text-muted-foreground">No findings detected yet</p>
+              <p className="text-sm text-muted-foreground mt-1">
                 Vulnerabilities will appear here as they are discovered
               </p>
             </div>

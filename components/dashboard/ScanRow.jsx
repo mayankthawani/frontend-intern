@@ -15,18 +15,18 @@ export default function ScanRow({ scan, visibleColumns }) {
   return (
     <tr 
       onClick={handleRowClick}
-      className="hover:bg-gray-50 transition-colors cursor-pointer"
+      className="hover:bg-accent transition-colors cursor-pointer"
       role="row"
     >
       {visibleColumns.name && (
         <td className="px-6 py-4 whitespace-nowrap">
-          <span className="text-sm font-medium text-gray-900">{scan.name}</span>
+          <span className="text-sm font-medium text-foreground">{scan.name}</span>
         </td>
       )}
       
       {visibleColumns.type && (
         <td className="px-6 py-4 whitespace-nowrap">
-          <span className="text-sm text-gray-600">{scan.type}</span>
+          <span className="text-sm text-muted-foreground">{scan.type}</span>
         </td>
       )}
       
@@ -63,7 +63,7 @@ export default function ScanRow({ scan, visibleColumns }) {
       
       {visibleColumns.lastScan && (
         <td className="px-6 py-4 whitespace-nowrap text-right">
-          <span className="text-sm text-gray-500">{scan.lastScan}</span>
+          <span className="text-sm text-muted-foreground">{scan.lastScan}</span>
         </td>
       )}
     </tr>

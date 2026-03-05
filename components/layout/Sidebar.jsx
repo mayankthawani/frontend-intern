@@ -13,6 +13,15 @@ import {
   X 
 } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navItems = [
   { name: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
@@ -26,6 +35,8 @@ const navItems = [
 
 export default function Sidebar({ isOpen, onClose }) {
   const pathname = usePathname()
+   
+  const { setTheme } = useTheme()
 
   return (
     <>
@@ -41,26 +52,26 @@ export default function Sidebar({ isOpen, onClose }) {
       {/* Sidebar */}
       <aside className={`
         fixed lg:static inset-y-0 left-0 z-50
-        w-64 bg-white border-r border-gray-200 flex flex-col
+        w-64 bg-card border-r border-border flex flex-col
         transform transition-transform duration-300 ease-in-out
         lg:translate-x-0
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
       {/* Logo */}
-      <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+      <div className="p-6 border-b border-border flex items-center justify-between">
         <Link href="/dashboard" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center">
-            <span className="w-4 h-4 rounded-full bg-white items-center justify-center"></span>
+            <span className="w-4 h-4 rounded-full bg-card items-center justify-center"></span>
           </div>
           <span className="font-semibold text-xl text-teal-500">aps</span>
         </Link>
         {/* Close button for mobile */}
         <button
           onClick={onClose}
-          className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          className="lg:hidden p-2 hover:bg-accent rounded-lg transition-colors"
           aria-label="Close sidebar"
         >
-          <X className="w-5 h-5 text-gray-500" />
+          <X className="w-5 h-5 text-muted-foreground" />
         </button>
       </div>
 
@@ -77,8 +88,8 @@ export default function Sidebar({ isOpen, onClose }) {
                   href={item.href}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                     isActive
-                      ? "bg-teal-50 text-teal-700"
-                      : "text-gray-700 hover:bg-gray-50"
+                      ? "bg-teal-500/10 text-teal-500"
+                      : "text-foreground hover:bg-accent"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -93,14 +104,34 @@ export default function Sidebar({ isOpen, onClose }) {
           })}
         </ul>
       </nav>
+      <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="icon">
+          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          System
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
 
       {/* User Profile */}
-      <div className="p-4 border-t border-gray-200">
+      <div className="p-4 border-t border-border">
         <button 
-          className="flex items-center gap-3 w-full p-3 rounded-lg hover:bg-gray-50 transition-colors"
+          className="flex items-center gap-3 w-full p-3 rounded-lg hover:bg-accent transition-colors"
           aria-label="User profile"
         >
-          <div className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
+          <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center overflow-hidden">
             <img 
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=admin" 
               alt="User avatar"
@@ -108,8 +139,8 @@ export default function Sidebar({ isOpen, onClose }) {
             />
           </div>
           <div className="flex-1 text-left">
-            <p className="text-sm font-medium text-gray-900">admin@aps.com</p>
-            <p className="text-xs text-gray-500">Security Lead</p>
+            <p className="text-sm font-medium text-foreground">admin@aps.com</p>
+            <p className="text-xs text-muted-foreground">Security Lead</p>
           </div>
         </button>
       </div>
@@ -117,3 +148,4 @@ export default function Sidebar({ isOpen, onClose }) {
     </>
   )
 }
+

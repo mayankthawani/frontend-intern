@@ -5,38 +5,38 @@ import ScanRow from "./ScanRow"
 export default function ScanTable({ scans, isLoading, visibleColumns }) {
   if (isLoading) {
     return (
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div className="bg-card rounded-xl border border-border overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-muted/50 border-b border-border">
               <tr>
                 {visibleColumns.name && (
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Scan Name
                   </th>
                 )}
                 {visibleColumns.type && (
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Type
                   </th>
                 )}
                 {visibleColumns.status && (
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Status
                   </th>
                 )}
                 {visibleColumns.progress && (
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Progress
                   </th>
                 )}
                 {visibleColumns.vulnerability && (
-                  <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Vulnerability
                   </th>
                 )}
                 {visibleColumns.lastScan && (
-                  <th className="px-6 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-right text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Last Scan
                   </th>
                 )}
@@ -47,36 +47,36 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
                 <tr key={i} className="animate-pulse">
                   {visibleColumns.name && (
                     <td className="px-6 py-4">
-                      <div className="h-4 bg-gray-200 rounded w-32"></div>
+                      <div className="h-4 bg-muted rounded w-32"></div>
                     </td>
                   )}
                   {visibleColumns.type && (
                     <td className="px-6 py-4">
-                      <div className="h-4 bg-gray-200 rounded w-20"></div>
+                      <div className="h-4 bg-muted rounded w-20"></div>
                     </td>
                   )}
                   {visibleColumns.status && (
                     <td className="px-6 py-4">
-                      <div className="h-7 bg-gray-200 rounded w-24"></div>
+                      <div className="h-7 bg-muted rounded w-24"></div>
                     </td>
                   )}
                   {visibleColumns.progress && (
                     <td className="px-6 py-4">
-                      <div className="h-4 bg-gray-200 rounded"></div>
+                      <div className="h-4 bg-muted rounded"></div>
                     </td>
                   )}
                   {visibleColumns.vulnerability && (
                     <td className="px-6 py-4">
                       <div className="flex gap-2">
-                        <div className="h-7 w-7 bg-gray-200 rounded"></div>
-                        <div className="h-7 w-7 bg-gray-200 rounded"></div>
-                        <div className="h-7 w-7 bg-gray-200 rounded"></div>
+                        <div className="h-7 w-7 bg-muted rounded"></div>
+                        <div className="h-7 w-7 bg-muted rounded"></div>
+                        <div className="h-7 w-7 bg-muted rounded"></div>
                       </div>
                     </td>
                   )}
                   {visibleColumns.lastScan && (
                     <td className="px-6 py-4">
-                      <div className="h-4 bg-gray-200 rounded w-16 ml-auto"></div>
+                      <div className="h-4 bg-muted rounded w-16 ml-auto"></div>
                     </td>
                   )}
                 </tr>
@@ -89,15 +89,15 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
   }
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <div className="bg-card rounded-xl border border-border overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full" role="table" aria-label="Scan results table">
-          <thead className="bg-gray-50 border-b border-gray-200">
+          <thead className="bg-muted/50 border-b border-border">
             <tr role="row">
               {visibleColumns.name && (
                 <th 
                   scope="col"
-                  className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 >
                   Scan Name
                 </th>
@@ -105,7 +105,7 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
               {visibleColumns.type && (
                 <th 
                   scope="col"
-                  className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 >
                   Type
                 </th>
@@ -113,7 +113,7 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
               {visibleColumns.status && (
                 <th 
                   scope="col"
-                  className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 >
                   Status
                 </th>
@@ -121,7 +121,7 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
               {visibleColumns.progress && (
                 <th 
                   scope="col"
-                  className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 >
                   Progress
                 </th>
@@ -129,7 +129,7 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
               {visibleColumns.vulnerability && (
                 <th 
                   scope="col"
-                  className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  className="px-6 py-3 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 >
                   Vulnerability
                 </th>
@@ -137,14 +137,14 @@ export default function ScanTable({ scans, isLoading, visibleColumns }) {
               {visibleColumns.lastScan && (
                 <th 
                   scope="col"
-                  className="px-6 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  className="px-6 py-3 text-right text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                 >
                   Last Scan
                 </th>
               )}
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 bg-white">
+          <tbody className="divide-y divide-border bg-card">
             {scans.map((scan) => (
               <ScanRow key={scan.id} scan={scan} visibleColumns={visibleColumns} />
             ))}

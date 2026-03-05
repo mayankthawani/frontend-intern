@@ -54,13 +54,13 @@ export default function ConsolePanel({ activityLogs = [], verificationLoops = []
   }
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 flex flex-col h-full">
-      <div className="border-b border-gray-200 p-4 flex items-center justify-between">
+    <div className="bg-card rounded-xl border border-border flex flex-col h-full">
+      <div className="border-b border-border p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <h3 className="font-semibold text-gray-900">Live Scan Console</h3>
+          <h3 className="font-semibold text-foreground">Live Scan Console</h3>
         </div>
-        <span className="text-sm text-gray-500">Running...</span>
+        <span className="text-sm text-muted-foreground">Running...</span>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col">
@@ -83,8 +83,8 @@ export default function ConsolePanel({ activityLogs = [], verificationLoops = []
           <div className="font-mono text-xs space-y-3">
             {activityLogs.map((log, index) => (
               <div key={index} className="flex gap-3">
-                <span className="text-gray-400 flex-shrink-0">[{log.timestamp}]</span>
-                <p className="text-gray-700 leading-relaxed">
+                <span className="text-muted-foreground flex-shrink-0">[{log.timestamp}]</span>
+                <p className="text-foreground leading-relaxed">
                   {renderLogMessage(log)}
                 </p>
               </div>
@@ -97,12 +97,12 @@ export default function ConsolePanel({ activityLogs = [], verificationLoops = []
             {verificationLoops.length > 0 ? (
               verificationLoops.map((log, index) => (
                 <div key={index} className="flex gap-3">
-                  <span className="text-gray-400 flex-shrink-0">[{log.timestamp}]</span>
-                  <p className="text-gray-700">{log.message}</p>
+                  <span className="text-muted-foreground flex-shrink-0">[{log.timestamp}]</span>
+                  <p className="text-foreground">{log.message}</p>
                 </div>
               ))
             ) : (
-              <p className="text-gray-500 text-center py-8">No verification loops yet</p>
+              <p className="text-muted-foreground text-center py-8">No verification loops yet</p>
             )}
           </div>
         </TabsContent>

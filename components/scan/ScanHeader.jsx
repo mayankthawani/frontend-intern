@@ -5,14 +5,14 @@ import { Button } from "@/components/ui/button"
 
 export default function ScanHeader({ scanName = "New Scan" }) {
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+    <header className="bg-card border-b border-border sticky top-0 z-10">
       <div className="px-4 md:px-8 py-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-gray-500 mb-1">
-              <a href="#" className="hover:text-gray-700">Scan</a>
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground mb-1">
+              <a href="#" className="hover:text-foreground">Scan</a>
               <span>/</span>
-              <a href="#" className="hover:text-gray-700">Private Assets</a>
+              <a href="#" className="hover:text-foreground">Private Assets</a>
               <span>/</span>
               <span className="text-teal-600 font-medium">{scanName}</span>
             </nav>

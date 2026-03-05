@@ -19,7 +19,7 @@ export default function StepTracker({ steps = [] }) {
                     ? "bg-teal-500 text-white"
                     : isActive
                     ? "bg-teal-500 text-white"
-                    : "bg-gray-200 text-gray-400"
+                    : "bg-muted text-muted-foreground"
                 }`}
               >
                 {isCompleted ? (
@@ -30,7 +30,7 @@ export default function StepTracker({ steps = [] }) {
               </div>
               <span
                 className={`text-xs font-medium ${
-                  isActive ? "text-teal-600" : "text-gray-500"
+                  isActive ? "text-teal-600" : "text-muted-foreground"
                 }`}
               >
                 {step.label}
@@ -39,7 +39,7 @@ export default function StepTracker({ steps = [] }) {
             {!isLast && (
               <div
                 className={`flex-1 h-0.5 mx-2 ${
-                  isCompleted ? "bg-teal-500" : "bg-gray-200"
+                  isCompleted ? "bg-teal-500" : "bg-border"
                 }`}
               />
             )}

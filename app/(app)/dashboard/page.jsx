@@ -89,45 +89,45 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <header className="bg-card border-b border-border sticky top-0 z-10">
         <div className="px-4 md:px-8 py-4">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-1">
-                <h1 className="text-2xl font-bold text-gray-900">Scan</h1>
-                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-gray-500">
+                <h1 className="text-2xl font-bold text-foreground">Scan</h1>
+                <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span>/</span>
-                  <a href="#" className="hover:text-gray-700">Private Assets</a>
+                  <a href="#" className="hover:text-foreground">Private Assets</a>
                   <span>/</span>
                   <a href="#" className="text-teal-600 font-medium">New Scan</a>
                 </nav>
               </div>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Org:</span>
-                  <span className="font-medium text-gray-900">Project X</span>
+                  <span className="text-muted-foreground">Org:</span>
+                  <span className="font-medium text-foreground">Project X</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Owner:</span>
-                  <span className="font-medium text-gray-900">Nemnagiri</span>
+                  <span className="text-muted-foreground">Owner:</span>
+                  <span className="font-medium text-foreground">Nemnagiri</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Total Scans:</span>
-                  <span className="font-medium text-gray-900">100</span>
+                  <span className="text-muted-foreground">Total Scans:</span>
+                  <span className="font-medium text-foreground">100</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Scheduled:</span>
-                  <span className="font-medium text-gray-900">1000</span>
+                  <span className="text-muted-foreground">Scheduled:</span>
+                  <span className="font-medium text-foreground">1000</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Rescans:</span>
-                  <span className="font-medium text-gray-900">100</span>
+                  <span className="text-muted-foreground">Rescans:</span>
+                  <span className="font-medium text-foreground">100</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-500">Failed Scans:</span>
-                  <span className="font-medium text-gray-900">100</span>
+                  <span className="text-muted-foreground">Failed Scans:</span>
+                  <span className="font-medium text-foreground">100</span>
                 </div>
                 <div className="flex items-center gap-2 text-teal-600">
                   <RefreshCw className="w-4 h-4" />
@@ -138,7 +138,7 @@ export default function DashboardPage() {
             <div className="flex items-center gap-3 flex-wrap">
               <button
                 onClick={handleExport}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground bg-card border border-input rounded-lg hover:bg-accent transition-colors"
                 aria-label="Export report"
               >
                 <Download className="w-4 h-4" />
